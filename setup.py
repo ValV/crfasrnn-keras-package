@@ -30,11 +30,11 @@ setup(name='crfasrnn_keras',
       ext_package='crfasrnn_keras',
       ext_modules=[Extension('lib.high_dim_filter',
           [
-              'crfasrnn/lib/high_dim_filter.cc',
-              'crfasrnn/lib/modified_permutohedral.cc'],
-          include_dirs=['crfasrnn/lib'] + [flag.lstrip('-I') for flag \
-                                           in TF_CFLAGS \
-                                           if flag.startswith('-I')],
+              'crfasrnn_keras/lib/high_dim_filter.cc',
+              'crfasrnn_keras/lib/modified_permutohedral.cc'],
+          include_dirs=['crfasrnn_keras/lib'] + [flag.lstrip('-I') for flag \
+                                                 in TF_CFLAGS \
+                                                 if flag.startswith('-I')],
           extra_compile_args=[flag for flag in TF_CFLAGS \
                               if not flag.startswith('-I')],
           libraries=[flag.lstrip('-l') for flag in TF_LDFLAGS \

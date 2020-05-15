@@ -1,7 +1,7 @@
 """
 MIT License
 
-Copyright (c) 2017 Sadeep Jayasumana
+Copyright (c) for original file by Sadeep Jayasumana, 2017. All other copyright by Vladimir Valeyev, 2020
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -24,8 +24,11 @@ SOFTWARE.
 
 import os
 import tensorflow as tf
+
+from glob import glob
 from tensorflow.python.framework import ops
-custom_module = tf.load_op_library(os.path.join(os.path.dirname(__file__), 'lib', 'high_dim_filter.so'))
+
+custom_module = tf.load_op_library(glob(os.path.join(os.path.dirname(__file__), 'lib', 'high_dim_filter*.so'))[0])
 
 
 @ops.RegisterGradient('HighDimFilter')

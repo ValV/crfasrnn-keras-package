@@ -1,7 +1,7 @@
 """
 MIT License
 
-Copyright (c) 2017 Sadeep Jayasumana
+Copyright (c) for original file by Sadeep Jayasumana, 2017. All other copyright by Vladimir Valeyev, 2020
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -24,9 +24,12 @@ SOFTWARE.
 
 import numpy as np
 import tensorflow as tf
+
 from tensorflow.python.ops import gradient_checker
 from tensorflow.python.framework import constant_op
-import high_dim_filter_loader
+
+from . import high_dim_filter_loader
+
 custom_module = high_dim_filter_loader.custom_module
 
 
